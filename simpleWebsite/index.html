@@ -1,0 +1,122 @@
+  <!-- 
+  Caleb Johnson
+  Web Programming 2
+  bootstrap/jquery
+  
+  I have changed my carousel to alternate and fade, my modal to fade in/out, 
+  my navbar to toggle collapse, and two link that display they don't work via tooltips and alerts.
+  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Caleb's Phones</title>
+    <script src="10.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css">
+  <!-- Custom styles for this template -->
+    <link href="css/home.css" rel="stylesheet">
+</head>
+<body>
+<!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="navbar-toggler-right">
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <a class="navbar-brand" href="#">
+            <img src="https://cdn.pixabay.com/photo/2013/07/13/12/46/iphone-160307_960_720.png" width="20" height="35" class="d-inline-block align-top" alt="">
+            <span class="">Caleb's Phones </span>
+        </a>
+        <div class="collapse" id="navbar">
+            <nav class="nav d-flex flex-column flex-md-row w-100 justify-content-end">
+                <a class="flex-fill text-center text-light nav-link" href="#about">Home</a>
+                <a class="flex-fill text-center text-light nav-link" href="#services">Store</a>
+                <a class="flex-fill text-center text-light nav-link" href="#contact">Repairs</a>
+                <a class="flex-fill text-center text-light nav-link" href="#contact">Contact</a>
+            </nav>
+        </div>
+    </nav>
+<!-- CAROUSEL -->
+    <div class="slider">
+          <img src="https://cdn.pixabay.com/photo/2015/02/02/11/09/office-620822_960_720.jpg" alt="jQuery Game Development Essentials" class="active" /> 
+          <img src="https://cdn.pixabay.com/photo/2017/04/11/15/59/broken-display-2222010_960_720.jpg" alt="jQuery Mobile Cookbook" /> 
+          <img src="https://cdn.pixabay.com/photo/2017/09/07/08/54/money-2724241_960_720.jpg" alt="jQuery for Designers" /> 
+    </div>
+<!-- //CAROUSEL -->
+	
+<!-- modal -->
+	<div id="ex1" class="modal">
+	<h1> Welcome! </h1>
+		<p>We are an up and coming business here to sell, buy, and even repair a phone for you.</p> </br>
+		<p>We are located in Duluth Minnesota, although store walk ins are our main goal right now, we are currently taking limited orders online!</p> </br>
+	<a href="#" rel="modal:close" class="btn-min">Close</a>
+	</div>
+	<div class = "box">
+		<a href="#ex1" rel="modal:open" class="btn"><h2>ABOUT US</h2></a>
+	</div>
+<!-- //modal -->
+	
+<!-- SECTIONS WITH TOOLTIP/POPUP -->
+	</br></br></br></br>
+        <div class="container-fluid marketing px-0">
+            <div class="row no-gutters">
+                <div class="col-lg-3 col-sm-6 ">
+                    <h3 title="This is currently not available"> Sell a phone</h3>
+                </div>
+                <div class="col-lg-3  col-sm-6">
+                    <h3 title="This is currently not available">Store</h3>
+                </div>
+            </div>
+        </div>
+<!-- //SECTIONS WITH TOOLTIP/POPUP -->
+
+<!-- START OF JQUERY --->
+<script type="text/javascript">
+//fade out modal in and out... it looks prettier
+	$(document).ready(function () {
+	$('a[href="#ex1"]').click(function () {
+		$(this).modal({
+			fadeDuration: 1000,
+			fadeDelaay: 0.50
+		});
+		return false;
+	});
+});
+// toggle our navbar collapse to allow a simpler screen for mobile users
+$(document).ready(function(){
+  $('.navbar-toggler').click(function() {
+    $('.collapse').collapse('toggle');
+  });
+});
+//turn on our alert function whenever people try to visit our links that don't exist
+$(document).ready(function(){
+  $("h3").click(function(){
+    alert("Were sorry, but our online store isn't entirely set up yet! \n Sorry!");
+  });
+});
+// initializing jqueries tooltip plugin
+    $(document).ready(function() {
+        $('h3').tooltip({
+    });
+});
+////////// END OF JQUERY</script>
+	
+<!-- FOOTER -->
+<footer class="page-footer font-small blue" id = "footer">
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="http://calebjohnson.site/cis1408/bs2/"> calebjohnson.site</a>
+  </div>
+</footer>
+<!-- Footer -->  
+</body>
+</html>

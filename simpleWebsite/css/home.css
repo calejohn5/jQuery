@@ -1,0 +1,71 @@
+/*
+Caleb Johnson
+*/
+
+body {
+    background: #cccccc;
+}
+section {
+  overflow: hidden;
+}
+
+/* 
+Carousel 
+	width: 700px;
+	height: 400px;
+*/
+.slider{
+	width: 700px;
+	height: 400px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+img {
+	max-width: 100%;
+	max-height: 100%;
+	position: absolute;
+	opacity: 0;
+	transition: 1s;
+}
+.active{
+	opacity: 1;
+}
+
+
+
+/* 
+NAVBAR
+*/
+.navbar {
+  border-bottom:2px solid #730000;
+}
+.navbar-brand span {
+  color: white;
+}
+
+.footer {
+    border-top:2px solid #730000;
+}
+
+.fixedsticky {
+  top: 0;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+#footer .nav-link:hover {
+  text-decoration: underline;
+}
+
+/*
+CARDS
+*/
+.bg-none {
+  background-color: transparent;
+}
+
+.card a {
+  border-bottom:1px solid #008ae6;
+}
